@@ -1,0 +1,30 @@
+let sp = [0,0];
+let route = 'NNNNEEENE';
+let currPlace = [...sp];
+
+var routeArr = route.split('');
+
+for(let i=0; i<routeArr.length; i++){
+    if(routeArr[i] === 'N'){
+        currPlace[1] += 1;
+    }
+    
+    else if(routeArr[i] === 'E'){
+        currPlace[0] += 1;
+    }
+    
+    else if(routeArr[i] === 'W'){
+        currPlace[0] -= 1;
+    }
+    
+    else if(routeArr[i] === 'S'){
+        currPlace[1] -= 1;
+    }
+}
+
+var x = Math.pow(currPlace[0] - sp[0], 2);
+var y = Math.pow(currPlace[1] - sp[1], 2);
+
+var sum = x + y;
+
+console.log(Math.sqrt(sum).toFixed(1));
